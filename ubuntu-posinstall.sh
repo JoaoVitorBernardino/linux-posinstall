@@ -33,8 +33,6 @@ just_apt_update(){
 
 PROGRAMAS_PARA_INSTALAR=(
   snapd
-  git
-  curl
   ca-certificates
   apt-transport-https
   wget
@@ -62,6 +60,11 @@ install_debs() {
     
     echo -e "${VERDE}[INFO] - Instalando pacotes apt do repositório${SEM_COR}"
     
+    if ! dpkg -l | grep -q curl; then
+        echo -e "${VERDE}[INFO] - Instalando Curl${SEM_COR}" 
+        sudo apt install curl
+    fi
+
     for nome_do_programa in ${PROGRAMAS_PARA_INSTALAR[@]}; do
         if ! dpkg -l | grep -q $nome_do_programa; then # Só instala se já não estiver instalado
             sudo apt install "$nome_do_programa" -y
