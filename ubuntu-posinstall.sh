@@ -120,6 +120,12 @@ install_docker(){
     install_docker_packages
 }
 
+add_root_privilege(){
+    sudo groupadd docker
+    sudo usermod -aG docker $USER
+    newgrp docker
+}
+
 testes_internet
 apt_update
 install_debs
@@ -128,6 +134,7 @@ install_vscode
 install_snaps
 install_docker
 apt_update
+add_root_privilege
 system_clean
 
 echo -e "${VERDE}[INFO] - Script finalizado, instalação concluída! :)${SEM_COR}"
