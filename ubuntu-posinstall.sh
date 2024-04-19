@@ -76,9 +76,24 @@ install_debs() {
 
 
 install_snaps(){
-    echo -e "${VERDE}[INFO] - Instalando pacotes snap${SEM_COR}"
+    echo -e "${VERDE}[INFO] - Atualizando os snap${SEM_COR}"
     sudo snap refresh
-    sudo snap install slack telegram-desktop
+
+    if ! snap list | grep -q slack; then
+        echo -e "${VERDE}[INFO] - Instalando pacotes snap${SEM_COR}"
+        sudo snap install slack
+        echo "[INSTALADO] - slack"
+    else
+        echo "[INSTALADO] - slack"
+    fi
+
+    if ! snap list | grep -q telegram-desktop; then
+        echo -e "${VERDE}[INFO] - Instalando pacotes snap${SEM_COR}"
+        sudo snap install telegram-desktop
+        echo "[INSTALADO] - telegram"
+    else
+        echo "[INSTALADO] - telegram"
+    fi
 }
 
 system_clean(){
