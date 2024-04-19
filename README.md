@@ -27,7 +27,7 @@ Clone o repositório
 git clone https://github.com/JoaoVitorBernardino/linux-posinstall.git
 ```
 
-Dê permissão ao shell script
+Dê permissão de execução ao shell script
 ```bash
 chmod +x ./linux-posinstall/ubuntu-posinstall.sh
 ```
