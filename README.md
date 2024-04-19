@@ -36,3 +36,6 @@ Agora basta executar o script
 ```bash
 sudo ./linux-posinstall/ubuntu-posinstall.sh
 ```
+
+# Referência
+Duolinux - [pop-os-postinstall](https://github.com/Diolinux/pop-os-postinstall/tree/main)
