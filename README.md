@@ -34,5 +34,5 @@ chmod +x ./linux-posinstall/ubuntu-posinstall.sh
 
 Agora basta executar o script
 ```bash
-./linux-posinstall/ubuntu-posinstall.sh
+sudo ./linux-posinstall/ubuntu-posinstall.sh
 ```
